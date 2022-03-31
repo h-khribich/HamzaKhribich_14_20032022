@@ -1,4 +1,4 @@
-import './app.css';
+import './styles/app.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateEmployee from './pages/createEmployee';
 import EmployeeList from './pages/employeeList';

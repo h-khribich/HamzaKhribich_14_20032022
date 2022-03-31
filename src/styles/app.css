@@ -1,9 +1,9 @@
+/* Original styling before React conversion */
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .container {
   display: flex;
@@ -20,4 +20,10 @@ label {
 
 .address {
   margin-top: 10px;
+}
+
+/* Added styling during React conversion */
+form {
+  min-width: 300px;
+  margin-block-end: 1em;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// EXPLAIN COMPONENT
 const employeeList = () => {
   return (
     <div>
