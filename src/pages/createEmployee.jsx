@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CreateEmployeeForm from '../components/CreateEmployeeForm';
+import Modal from '../components/Modal';
 
 // EXPLAIN FUNCTION
 const saveEmployee = () => {
@@ -19,6 +20,7 @@ const createEmployee = () => {
         <h2>Create Employee</h2>
         <CreateEmployeeForm />
         <button onClick={saveEmployee()}>Save</button>
+        <Modal />
       </div>
     </div>
   );

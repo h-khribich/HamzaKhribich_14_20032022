@@ -27,3 +27,30 @@ form {
   min-width: 300px;
   margin-block-end: 1em;
 }
+
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%); */
+  background-color: black;
+  color: white;
+  padding: 1rem 3rem;
+}
+
+.modal-message {
+  position: relative;
+}
+
+.modal-close-btn {
+  border-radius: 50%;
+  background-color: midnightblue;
+  color: white;
+  position: absolute;
+  top: -23px;
+  right: -53px;
+  height: 1.4em;
+}
+
