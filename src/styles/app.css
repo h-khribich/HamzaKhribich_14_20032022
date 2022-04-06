@@ -1,8 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* Original styling before React conversion */
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
 }
 
 .container {
@@ -10,6 +17,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 1.5rem;
+  gap: 1.5rem;
 }
 
 label {
@@ -19,29 +28,47 @@ label {
 }
 
 .address {
-  margin-top: 10px;
+  margin-top: 15px;
+  padding: 20px;
 }
 
 /* Added styling during React conversion */
+
+.create-employee-page { 
+  position: relative;
+}
+
 form {
   min-width: 300px;
   margin-block-end: 1em;
 }
 
+.modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.384);
+}
+
 .modal {
+  position: absolute;
   top: 50%;
   left: 50%;
   right: auto;
   bottom: auto;
-  /* margin-right: -50%; */
-  /* transform: translate(-50%, -50%); */
+  margin-right: -50%; 
+  transform: translate(-50%, -50%); 
   background-color: black;
   color: white;
   padding: 1rem 3rem;
+  border-radius: 10px;
 }
 
 .modal-message {
   position: relative;
+  color: white;
 }
 
 .modal-close-btn {
@@ -52,5 +79,18 @@ form {
   top: -23px;
   right: -53px;
   height: 1.4em;
+  cursor: pointer;
+}
+
+.no-scroll { 
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.content-blurred {
+  filter: blur(1px);
 }
 
