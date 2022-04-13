@@ -5,7 +5,10 @@ import { useDispatch } from 'react-redux';
 import { addEmployee } from '../features/addEmployee/employeesTableSlice';
 import { toggleModal } from './Modal';
 import DatePicker from './DatePicker';
-import UsStatePicker from './UsStatePicker';
+import Select from './Select';
+import { stateOptions } from '../app/stateOptions';
+import { departmentOptions } from '../app/departementOptions';
+
 
 // EXPLAIN COMPONENT
 const CreateEmployeeForm = () => {
@@ -62,20 +65,14 @@ const CreateEmployeeForm = () => {
         <input id="city" type="text" ref={city} />
 
         <label htmlFor="state">State</label>
-        <UsStatePicker />
+        <Select options={stateOptions} />
 
         <label htmlFor="zip-code">Zip Code</label>
         <input id="zip-code" type="number" ref={zipCode} />
       </fieldset>
 
       <label htmlFor="department">Department</label>
-      <select name="department" id="department" ref={department}>
-        <option>Sales</option>
-        <option>Marketing</option>
-        <option>Engineering</option>
-        <option>Human Resources</option>
-        <option>Legal</option>
-      </select>
+      <Select options={departmentOptions} />
 
       <div className="save-btn-container">
         <input type='submit' className='save-btn' value="Save" onClick={(e) => handleSubmit(e)} />
