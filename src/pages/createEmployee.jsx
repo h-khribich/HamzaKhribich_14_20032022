@@ -3,39 +3,28 @@ import { Link } from 'react-router-dom';
 import CreateEmployeeForm from '../components/CreateEmployeeForm';
 import Modal from '../components/Modal';
 
-// EXPLAIN FUNCTION
-export const handleModal = () => {
-    const body = document.body
-    const content = document.querySelector(".content")
-    const modalContainer = document.querySelector(".modal-container")
-
-    body.classList.toggle("no-scroll")
-    content.classList.toggle("content-blurred")
-    modalContainer.classList.toggle("hidden")
-}
-
-// EXPLAIN FUNCTION
-const saveEmployee = () => {
-
-  handleModal()
-}
-
 // EXPLAIN COMPONENT
 const createEmployee = () => {
   return (
     <div className='create-employee-page'>
-      <div className='content'>
-        <div className='title'>
-          <h1>HRnet</h1>
-        </div>
-        <div className='container'>
-          <Link to="/employee-list">View Current Employees</Link>
-          <h2>Create Employee</h2>
-          <CreateEmployeeForm />
-          <button className='modal-button' onClick={(e) => saveEmployee()}>Save</button>
-        </div>
+
+    <header className='header'>
+      <div className='logo-container'>
+        <img src='./assets/hrnet-logo.png' alt='HRnet logo' id='hrnet-logo'></img>
+        <h1 className='title'>HRnet</h1>
       </div>
-      <Modal />
+      <div className='link-container'>
+        <h2 className='link-title'>Create Employee</h2>
+        <Link to="/employee-list"className='header-link'>View Current Employees</Link>
+      </div>
+      <img src='./assets/header-illustration.svg' alt='' id='header-illustration'></img>
+    </header>
+
+    <div className='form-container'>
+      <CreateEmployeeForm />
+    </div>
+
+    <Modal />
     </div>
   );
 };

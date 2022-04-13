@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import Table from '../components/Table';
+
+
+// <Table />
 
 // EXPLAIN COMPONENT
 const employeeList = () => {
   return (
     <div>
-      <h1>EMPLOYEE LIST</h1>
+      <h1>Current Employees</h1>
       <Link to="/">Home</Link>
-      <h1>Various components</h1>
     </div>
   );
 };
