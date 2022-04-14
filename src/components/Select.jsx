@@ -1,4 +1,7 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useImperativeHandle } from 'react';
+import { useState } from 'react';
 import ReactSelect from "react-select";
 
 const customStyles = {
@@ -14,14 +17,22 @@ const customStyles = {
   }),
   container: (provided) => ({
     ...provided,
-    // height: "40px",
     borderRadius: "5px",
     backgroundColor: "aliceblue",
   }),
 }
 
 // EXPLAIN COMPONENT
-const Select = (props) => {
+const Select = React.forwardRef((props, ref) => {
+  const [selectedValue, setSelectedValue] = useState("");
+
+  // Enables the parent component to access this child's state with the getMyState function
+  useImperativeHandle(ref, () => ({ getMyState: () => { return selectedValue }}), [selectedValue])
+
+  // Default state is default value shown to user in select
+  useEffect(() => {
+    setSelectedValue(props.options[0].value)
+  }, [props.options])
 
   return (
     <ReactSelect 
@@ -29,8 +40,9 @@ const Select = (props) => {
       defaultValue={props.options[0]}
       options={props.options}
       className={"react-select"}
+      onChange={(item) => setSelectedValue(item.value)}
     />
   );
-};
+});
 
 export default Select;

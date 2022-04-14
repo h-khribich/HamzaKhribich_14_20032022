@@ -6,8 +6,8 @@ import { addEmployee } from '../features/addEmployee/employeesTableSlice';
 import { toggleModal } from './Modal';
 import DatePicker from './DatePicker';
 import Select from './Select';
-import { stateOptions } from '../app/stateOptions';
-import { departmentOptions } from '../app/departementOptions';
+import { stateOptions } from '../app/selectOptions/stateOptions';
+import { departmentOptions } from '../app/selectOptions/departementOptions';
 
 
 // EXPLAIN COMPONENT
@@ -16,8 +16,11 @@ const CreateEmployeeForm = () => {
   
   const firstName = useRef(null);
   const lastName = useRef(null);
+  const dateOfBirth = useRef(null);
+  const startDate = useRef(null);
   const street = useRef(null);
   const city = useRef(null);
+  const state = useRef(null);
   const zipCode = useRef(null);
   const department = useRef(null);
 
@@ -28,19 +31,19 @@ const CreateEmployeeForm = () => {
   const employeeData = {
     firstName: firstName.current.value,
     lastName: lastName.current.value,
-    dateOfBirth: document.getElementById("date-of-birth").value,
-    startDate: document.getElementById("start-date").value,
+    dateOfBirth: dateOfBirth.current.getMyState(),
+    startDate: startDate.current.getMyState(),
     street: street.current.value,
     city: city.current.value,
-    state: document.getElementById("state").value,
+    state: state.current.getMyState(),
     zipCode: zipCode.current.value,
-    department: department.current.value,
+    department: department.current.getMyState(),
   }
 
   dispatch(addEmployee(employeeData));
   toggleModal();
   }
-
+ 
   return (
     <form action='#' id='create-employee'>
       <label htmlFor="first-name">First Name</label>
@@ -50,10 +53,10 @@ const CreateEmployeeForm = () => {
       <input type="text" id="last-name" ref={lastName} />
 
       <label htmlFor="date-of-birth">Date of Birth</label>
-      <DatePicker id={"date-of-birth"} />
+      <DatePicker id={"date-of-birth"} ref={dateOfBirth} />
 
       <label htmlFor="start-date">Start Date</label>
-      <DatePicker id={"start-date"} />
+      <DatePicker id={"start-date"} ref={startDate} />
 
       <fieldset className="address">
         <legend>Address</legend>
@@ -65,14 +68,14 @@ const CreateEmployeeForm = () => {
         <input id="city" type="text" ref={city} />
 
         <label htmlFor="state">State</label>
-        <Select options={stateOptions} />
+        <Select options={stateOptions} ref={state} />
 
         <label htmlFor="zip-code">Zip Code</label>
         <input id="zip-code" type="number" ref={zipCode} />
       </fieldset>
 
       <label htmlFor="department">Department</label>
-      <Select options={departmentOptions} />
+      <Select options={departmentOptions} ref={department} />
 
       <div className="save-btn-container">
         <input type='submit' className='save-btn' value="Save" onClick={(e) => handleSubmit(e)} />
