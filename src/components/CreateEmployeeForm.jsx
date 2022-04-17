@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { addEmployee } from '../features/addEmployee/employeesTableSlice';
+import { addEmployee, updateEmployeeTable } from '../features/addEmployee/employeesTableSlice';
 import { toggleModal } from './Modal';
 import DatePicker from './DatePicker';
 import Select from './Select';
@@ -28,6 +28,7 @@ const CreateEmployeeForm = () => {
   const handleSubmit = (e) => {
   e.preventDefault();
   
+  // EXPLAIN USE OF FUNCTION
   const employeeData = {
     firstName: firstName.current.value,
     lastName: lastName.current.value,
@@ -41,6 +42,7 @@ const CreateEmployeeForm = () => {
   }
 
   dispatch(addEmployee(employeeData));
+  dispatch(updateEmployeeTable(employeeData));
   toggleModal();
   }
  
@@ -85,19 +87,3 @@ const CreateEmployeeForm = () => {
 };
 
 export default CreateEmployeeForm;
-
-/*
-useEffect(() => {
-    let employeeData = {
-      firstName: document.getElementById("first-name").value,
-      lastName: document.getElementById("last-name").value,
-      dateOfBirth: document.getElementById("dateOfBirth").value,
-      startDate: document.getElementById("startDate").value,
-      street: document.getElementById("street").value,
-      city: document.getElementById("city").value,
-      state: document.getElementById("state").value,
-      zipCode: document.getElementById("zip-code").value,
-      department: document.getElementById("department").value,
-    }
-  }, [])
-*/

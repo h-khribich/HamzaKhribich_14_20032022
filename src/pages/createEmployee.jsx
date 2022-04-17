@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CreateEmployeeForm from '../components/CreateEmployeeForm';
 import Modal from '../components/Modal';
+import { FaClipboardList } from 'react-icons/fa'
 
 // EXPLAIN COMPONENT
-const createEmployee = () => {
+const CreateEmployee = () => {
   return (
     <div className='create-employee-page'>
 
@@ -15,7 +16,7 @@ const createEmployee = () => {
       </div>
       <div className='link-container'>
         <h2 className='link-title'>Create Employee</h2>
-        <Link to="/employee-list"className='header-link'>View Current Employees</Link>
+        <Link to="/employee-list"className='header-link'>View Current Employees <FaClipboardList /></Link>
       </div>
       <img src='./assets/header-illustration.svg' alt='' id='header-illustration'></img>
     </header>
@@ -29,4 +30,4 @@ const createEmployee = () => {
   );
 };
 
-export default createEmployee;
+export default CreateEmployee;

@@ -10,7 +10,7 @@ body {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 500;
   width: fit-content;
   -webkit-text-stroke: midnightblue;
@@ -89,6 +89,10 @@ body {
 }
 
 .header-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
   color: white;
   text-decoration: none;
   transition: 0.3s;
@@ -231,5 +235,17 @@ input:not(.save-btn) {
 
 .react-select input {
   height: 25px;
+}
+
+.employee-table-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.employee-table-page {
+  height: 100vh;
+  background-image: url("../../public/assets/form-container-illustration.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 

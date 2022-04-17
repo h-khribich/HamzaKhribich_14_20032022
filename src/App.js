@@ -1,7 +1,7 @@
 import './styles/app.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CreateEmployee from './pages/createEmployee';
-import EmployeeList from './pages/employeeList';
+import CreateEmployee from './pages/CreateEmployee';
+import EmployeeList from './pages/EmployeeList';
 import { Provider } from 'react-redux';
 import store from './app/store';
 

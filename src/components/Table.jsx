@@ -1,10 +1,11 @@
 import React from 'react';
+import DataTable from 'react-data-table-component'
+import { tableCustomStyles } from '../app/employeeDataTable/tableCustomStyles'
+import { employeeData } from '../app/employeeDataTable/employeeData';
 
-const Table = () => {
+const Table = ({columns, data}) => {
   return (
-    <div id='employee-div' className='container'>
-      <table id="employee-table" className="display"></table>
-    </div>
+    <DataTable columns={columns} data={employeeData} customStyles={tableCustomStyles} />
   );
 };
 

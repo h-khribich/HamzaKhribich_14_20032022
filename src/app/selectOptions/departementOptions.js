@@ -1,7 +1,7 @@
 export const departmentOptions = [
-  { value: "sales", label: "Sales"},
-  { value: "marketing", label: "Marketing"},
-  { value: "engineering", label: "Engineering"},
-  { value: "human ressources", label: "Human Ressources"},
-  { value: "legal", label: "Legal"},
+  { value: "Sales", label: "Sales"},
+  { value: "Marketing", label: "Marketing"},
+  { value: "Engineering", label: "Engineering"},
+  { value: "Human Ressources", label: "Human Ressources"},
+  { value: "Legal", label: "Legal"},
 ]
