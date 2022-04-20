@@ -1,49 +1,49 @@
 // import { current } from '@reduxjs/toolkit';
 import React from 'react';
 import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { addEmployee, updateEmployeeTable } from '../features/addEmployee/employeesTableSlice';
-import { toggleModal } from './Modal';
+// import { useDispatch } from 'react-redux';
+// import { addEmployee, updateEmployeeTable } from '../features/addEmployee/employeesTableSlice';
+// import { toggleModal } from './Modal';
 import DatePicker from './DatePicker';
 import Select from './Select';
 import { stateOptions } from '../app/selectOptions/stateOptions';
 import { departmentOptions } from '../app/selectOptions/departementOptions';
+import { toggleModal } from './Modal';
+import axios from 'axios'
 
 
 // EXPLAIN COMPONENT
 const CreateEmployeeForm = () => {
-  const dispatch = useDispatch();
-  
-  const firstName = useRef(null);
-  const lastName = useRef(null);
-  const dateOfBirth = useRef(null);
-  const startDate = useRef(null);
-  const street = useRef(null);
-  const city = useRef(null);
-  const state = useRef(null);
-  const zipCode = useRef(null);
-  const department = useRef(null);
+  // const dispatch = useDispatch();
+  const firstName = useRef('');
+  const lastName = useRef('');
+  const dateOfBirth = useRef('');
+  const startDate = useRef('');
+  const street = useRef('');
+  const city = useRef('');
+  const state = useRef('');
+  const zipCode = useRef('');
+  const department = useRef('');
 
   // EXPLAIN FUNCTION
-  const handleSubmit = (e) => {
-  e.preventDefault();
-  
-  // EXPLAIN USE OF FUNCTION
-  const employeeData = {
-    firstName: firstName.current.value,
-    lastName: lastName.current.value,
-    dateOfBirth: dateOfBirth.current.getMyState(),
-    startDate: startDate.current.getMyState(),
-    street: street.current.value,
-    city: city.current.value,
-    state: state.current.getMyState(),
-    zipCode: zipCode.current.value,
-    department: department.current.getMyState(),
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  dispatch(addEmployee(employeeData));
-  dispatch(updateEmployeeTable(employeeData));
-  toggleModal();
+    const employeeData = {
+      firstName: firstName.current.value,
+      lastName: lastName.current.value,
+      dateOfBirth: dateOfBirth.current.getMyState(),
+      startDate: startDate.current.getMyState(),
+      street: street.current.value,
+      city: city.current.value,
+      state: state.current.getMyState(),
+      zipCode: zipCode.current.value,
+      department: department.current.getMyState(),
+    }
+
+    await axios.post('/employees', employeeData)
+
+    toggleModal();
   }
  
   return (

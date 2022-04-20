@@ -2,7 +2,7 @@ import React from 'react';
 import { FaTimesCircle } from "react-icons/fa"
 import { IconContext } from "react-icons";
 
-// EXPLAIN FUNCTION
+// EXPLAIN FUNCTION & ADD MESSAGE AS PROP
 export const toggleModal = () => {
   const modalContainer = document.querySelector(".modal-container")
 

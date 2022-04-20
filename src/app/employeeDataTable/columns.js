@@ -1,12 +1,12 @@
 export const columns = [
   {
     name: "Firstname",
-    selector: row => row.firstname,
+    selector: row => row.firstName,
     sortable: true,
   },
   {
     name: "Lastname",
-    selector: row => row.lastname,
+    selector: row => row.lastName,
     sortable: true,
   },
   {

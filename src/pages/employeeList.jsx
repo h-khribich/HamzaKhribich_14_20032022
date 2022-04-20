@@ -4,9 +4,28 @@ import Table from '../components/Table';
 import { columns } from '../app/employeeDataTable/columns';
 import { FaHome } from "react-icons/fa";
 // import { employeeData } from '../app/employeeDataTable/employeeData';
+// import { employeeList } from '../mocks/handlers';
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useState } from 'react';
+
+
 
 // EXPLAIN COMPONENT
 const EmployeeList = () => {
+
+  const [employeeList, setEmployeeList] = useState([])
+
+  const getEmployees = async () => {
+    const { data } = await axios.get('/employees')
+    console.log(data);
+    return data
+  }
+
+  useEffect(() => {
+    setEmployeeList(getEmployees())
+  }, [])
+
   return (
     <div className='employee-table-page'>
       <header className='header'>
@@ -14,7 +33,9 @@ const EmployeeList = () => {
         <Link to="/" className='header-link'><FaHome /> Home</Link>
       </header>
       <div className='employee-table-container'>
-        <Table columns={columns} />
+        {
+          employeeList.length ? <Table columns={columns} data={employeeList} /> : <p>Loading...</p>
+        }
       </div>
     </div>
   );
