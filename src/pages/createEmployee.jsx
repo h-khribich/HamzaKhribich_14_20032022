@@ -25,7 +25,7 @@ const CreateEmployee = () => {
       <CreateEmployeeForm />
     </div>
 
-    <Modal />
+    <Modal message={'Employee successfully created!'} />
     </div>
   );
 };
