@@ -10,20 +10,18 @@ export const toggleModal = () => {
   modalContainer.classList.toggle("hidden")
 }
 
-const Modal = () => {
-  
+const Modal = (props) => {
   return (
     <div className='modal-container hidden'>
       <div className='modal'>
         <div className='modal-message'>
-          Employee successfully created!
+          {props.message}
 
           <IconContext.Provider value={{ color: "white", style: {width: "1.4em", height: "1.4em"} }}>
             <span className='modal-close-btn' onClick={(e) => toggleModal()}>
               <FaTimesCircle />
             </span>
           </IconContext.Provider>
-
         </div>
       </div>
     </div>

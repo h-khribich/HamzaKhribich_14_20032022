@@ -1,14 +1,12 @@
-// import { current } from '@reduxjs/toolkit';
 import React from 'react';
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { addEmployee, updateEmployeeTable } from '../features/addEmployee/employeesTableSlice';
+import { addEmployee } from '../features/addEmployee/employeesTableSlice';
 import { toggleModal } from './Modal';
 import DatePicker from './DatePicker';
 import Select from './Select';
 import { stateOptions } from '../app/selectOptions/stateOptions';
 import { departmentOptions } from '../app/selectOptions/departementOptions';
-
 
 // EXPLAIN COMPONENT
 const CreateEmployeeForm = () => {
@@ -42,7 +40,6 @@ const CreateEmployeeForm = () => {
   }
 
   dispatch(addEmployee(employeeData));
-  dispatch(updateEmployeeTable(employeeData));
   toggleModal();
   }
  

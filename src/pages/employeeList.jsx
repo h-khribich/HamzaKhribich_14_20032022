@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import Table from '../components/Table';
 import { columns } from '../app/employeeDataTable/columns';
 import { FaHome } from "react-icons/fa";
-// import { employeeData } from '../app/employeeDataTable/employeeData';
+import { useSelector } from 'react-redux';
 
 // EXPLAIN COMPONENT
 const EmployeeList = () => {
+  const { loading, employees } = useSelector(state => state.employeeTable)
+
   return (
     <div className='employee-table-page'>
       <header className='header'>
@@ -14,7 +16,9 @@ const EmployeeList = () => {
         <Link to="/" className='header-link'><FaHome /> Home</Link>
       </header>
       <div className='employee-table-container'>
-        <Table columns={columns} />
+        {
+          loading ? <p>Loading...</p> : <Table columns={columns} data={employees} />
+        } 
       </div>
     </div>
   );
