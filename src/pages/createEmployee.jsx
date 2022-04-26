@@ -8,6 +8,7 @@ import { FaClipboardList } from 'react-icons/fa'
  * Create Employee Page
  */
 const CreateEmployee = () => {
+  
   return (
     <div className='create-employee-page'>
 

@@ -19,7 +19,7 @@ const EmployeeList = () => {
       </header>
       <div className='employee-table-container'>
         {
-          loading ? <p>Loading...</p> : <Table columns={columns} data={employees} />
+          loading ? <p>Loading table...</p> : <Table columns={columns} data={employees} />
         } 
       </div>
     </div>
