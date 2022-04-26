@@ -48,6 +48,7 @@ const Select = React.forwardRef((props, ref) => {
       options={props.options}
       className={"react-select"}
       onChange={(item) => setSelectedValue(item.value)}
+      id={props.id}
     />
   );
 });

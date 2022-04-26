@@ -79,14 +79,14 @@ const CreateEmployeeForm = () => {
         <input id="city" type="text" ref={city} />
 
         <label htmlFor="state">State</label>
-        <Select options={stateOptions} ref={state} />
+        <Select options={stateOptions} id={'state'} ref={state} />
 
         <label htmlFor="zip-code">Zip Code</label>
         <input id="zip-code" type="number" ref={zipCode} />
       </fieldset>
 
       <label htmlFor="department">Department</label>
-      <Select options={departmentOptions} ref={department} />
+      <Select options={departmentOptions} id={'department'} ref={department} />
 
       <div className="save-btn-container">
         <input type='submit' className='save-btn' value="Save" onClick={(e) => handleSubmit(e)} />
