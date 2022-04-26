@@ -1,3 +1,6 @@
+/**
+ * Table component data columns
+ */
 export const columns = [
   {
     name: "Firstname",

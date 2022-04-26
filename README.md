@@ -34,5 +34,6 @@ Preview the build
 
 ```shell
 npm run serve
+```
 
 

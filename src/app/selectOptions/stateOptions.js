@@ -1,3 +1,6 @@
+/**
+ * Select component state options prop
+ */
 export const stateOptions = [
   { value: "AL", label: "Alabama"},
   { value: "AK", label: "Alaska"},

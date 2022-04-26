@@ -1,3 +1,6 @@
+/**
+ * Table component custom styling
+ */
 export const tableCustomStyles = {
   table: {
     style: {

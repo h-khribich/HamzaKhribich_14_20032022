@@ -4,7 +4,9 @@ import CreateEmployeeForm from '../components/CreateEmployeeForm';
 import Modal from '../components/Modal';
 import { FaClipboardList } from 'react-icons/fa'
 
-// EXPLAIN COMPONENT
+/**
+ * Create Employee Page
+ */
 const CreateEmployee = () => {
   return (
     <div className='create-employee-page'>

@@ -5,7 +5,9 @@ import { columns } from '../app/employeeDataTable/columns';
 import { FaHome } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 
-// EXPLAIN COMPONENT
+/**
+ * Employee List page
+ */
 const EmployeeList = () => {
   const { loading, employees } = useSelector(state => state.employeeTable)
 

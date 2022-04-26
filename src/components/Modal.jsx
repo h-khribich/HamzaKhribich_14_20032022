@@ -2,7 +2,9 @@ import React from 'react';
 import { FaTimesCircle } from "react-icons/fa"
 import { IconContext } from "react-icons";
 
-// EXPLAIN FUNCTION
+/**
+ * Display modal and prevent scrolling
+ */
 export const toggleModal = () => {
   const modalContainer = document.querySelector(".modal-container")
 
@@ -10,6 +12,10 @@ export const toggleModal = () => {
   modalContainer.classList.toggle("hidden")
 }
 
+/**
+ * Modal component
+ * @param {String} props - Modal message
+ */
 const Modal = (props) => {
   return (
     <div className='modal-container hidden'>

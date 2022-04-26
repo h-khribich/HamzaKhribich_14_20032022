@@ -8,10 +8,16 @@ import Select from './Select';
 import { stateOptions } from '../app/selectOptions/stateOptions';
 import { departmentOptions } from '../app/selectOptions/departementOptions';
 
-// EXPLAIN COMPONENT
+/**
+ * Create employee page form
+ */
 const CreateEmployeeForm = () => {
   const dispatch = useDispatch();
+  const resetForm = () => document.getElementById('create-employee').reset()
   
+  /**
+   * Use of refs to access element's value
+   */
   const firstName = useRef(null);
   const lastName = useRef(null);
   const dateOfBirth = useRef(null);
@@ -22,11 +28,16 @@ const CreateEmployeeForm = () => {
   const zipCode = useRef(null);
   const department = useRef(null);
 
-  // EXPLAIN FUNCTION
+  /**
+ * Submit data to redux state, clear form and trigger modal
+ * @param {Event} e - Click event
+ */
   const handleSubmit = (e) => {
   e.preventDefault();
   
-  // EXPLAIN USE OF FUNCTION
+  /**
+ * Object to access current values of previously declared refs
+ */
   const employeeData = {
     firstName: firstName.current.value,
     lastName: lastName.current.value,
@@ -41,8 +52,9 @@ const CreateEmployeeForm = () => {
 
   dispatch(addEmployee(employeeData));
   toggleModal();
+  resetForm();
   }
- 
+
   return (
     <form action='#' id='create-employee'>
       <label htmlFor="first-name">First Name</label>

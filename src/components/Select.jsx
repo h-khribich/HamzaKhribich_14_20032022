@@ -4,6 +4,9 @@ import { useImperativeHandle } from 'react';
 import { useState } from 'react';
 import ReactSelect from "react-select";
 
+/**
+ * Select component custom styling
+ */
 const customStyles = {
   option: (provided, state) => ({
     ...provided,
@@ -22,7 +25,11 @@ const customStyles = {
   }),
 }
 
-// EXPLAIN COMPONENT
+/**
+ * Select component - Use of forwardRef to be able to pass a ref to child component
+ * @param {String} props - string id
+ * @param {Object} ref - Will be updated to parent component thanks to imperativeHandle hook
+ */
 const Select = React.forwardRef((props, ref) => {
   const [selectedValue, setSelectedValue] = useState("");
 

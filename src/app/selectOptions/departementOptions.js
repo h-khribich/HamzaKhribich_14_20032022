@@ -1,3 +1,6 @@
+/**
+ * Select component department options prop
+ */
 export const departmentOptions = [
   { value: "Sales", label: "Sales"},
   { value: "Marketing", label: "Marketing"},
