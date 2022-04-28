@@ -1,7 +1,7 @@
 # Projet OpenClassroom #14 - Faites passer une librairie jQuery vers React
 
 ## Description
-- Conversion d'une application JS/JQuery vers React (CRA). Utilisation de [Redux](https://redux.js.org/introduction/getting-started) dans cette application pour la gestion des états. Un seul des plugins de l'ancienne version devait être choisi et converti 'à la main', sans utiliser de librairie. J'ai choisi de convertir la modale, que vous pouvez trouver ici.
+- Conversion d'une application JS/JQuery vers React (CRA). Utilisation de [Redux](https://redux.js.org/introduction/getting-started) dans cette application pour la gestion des états. Un seul des plugins de l'ancienne version devait être choisi et converti 'à la main', sans utiliser de librairie. J'ai choisi de convertir la modale, que vous pouvez trouver [ici](https://github.com/h-khribich/Khribich_Hamza_14_bibliotheque_react_042022-).
 
 ## Librairies
 - Libraires utilisées :
